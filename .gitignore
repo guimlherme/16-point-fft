@@ -1,0 +1,20 @@
+output_files/
+db/
+incremental_db/
+work/
+work_rtl/
+transcript
+*.bak
+
+
+# Ignore everything except git, waveform and VHDL files
+*
+!*.vhd
+!*.do
+!.gitignore
+!README.md
+!LICENSE
+# Internal testbenches
+testbench_*
+# Fixed point packages
+fixed_*
