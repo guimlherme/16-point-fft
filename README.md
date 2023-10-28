@@ -14,7 +14,7 @@ The input should be a real signal, represented by a 16-array of fixed point numb
 
 The output is divided by 16, in such a way that the output values should fit between -1 and 1.
 
-There are three input control signals: clk, reset, enable. The reset signal is activated with a logic zero. The enable signal will start a new calculations with a logic one. It is not necessary to keep the enable signal dunring the calculations.
+There are three input control signals: clk, reset, enable. The reset signal is activated with a logic zero. The enable signal will start a new calculations with a logic one. It is not necessary to keep the enable signal during the calculations.
 
 ## Usage
 
@@ -32,4 +32,4 @@ To start a new calculation, simply put enable = '1' at any time from the 8th cyc
 
 ## Testing
 
-I provided a testbenche for the radix16. I also provided the wave.do file for ModelSim Wave view.
+I provided a testbench for the radix16. I also provided the wave.do file for ModelSim Wave view.
