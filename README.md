@@ -2,6 +2,8 @@
 
 This is the implementation of a 16-point FFT in VHDL. The architecture focuses on a implementation using only one radix-4 computation block, three complex multipliers, and data registration.
 
+Most of the calculations are inspired on (Mankar et al., FPGA implementation of 16-point radix-4 complex FFT core using Neda, 2013).
+
 ## Defining the data types
 
 The project is based on the 12-bit signed fixed point number ranging from -1 to 1 (but not including either ending). This can be easily changed on types.vhd
