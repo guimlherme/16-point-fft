@@ -22,9 +22,8 @@ architecture radix2_a of radix2 is
   
   begin
   
-    som <= resize(x0+x1,som'left,som'right,fixed_saturate,fixed_truncate);
-    dif <= resize(x0-x1,dif'left,dif'right,fixed_saturate,fixed_truncate);
-    two_sf <= to_sfixed(2,2,0);
+    som <= x0+x1;
+    dif <= x0-x1;
       
     process (d2,som,dif)
   
@@ -34,8 +33,8 @@ architecture radix2_a of radix2 is
         yp <= resize( som,yp'left,yp'right,fixed_saturate,fixed_truncate) ;
         ym <= resize( dif,ym'left,ym'right,fixed_saturate,fixed_truncate) ;
       else
-        yp <= resize( som/two_sf,yp'left,yp'right,fixed_saturate,fixed_truncate) ;
-        ym <= resize( dif/two_sf,ym'left,ym'right,fixed_saturate,fixed_truncate) ;
+        yp <= resize( som sra 1,yp'left,yp'right,fixed_saturate,fixed_truncate) ; -- divide by two
+        ym <= resize( dif sra 1,ym'left,ym'right,fixed_saturate,fixed_truncate) ; -- divide by two
       end if ;
     end process ;
   
