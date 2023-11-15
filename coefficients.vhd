@@ -72,7 +72,7 @@ sin_values <= (
     cos_3pi_over_8                                     -- sin(-9*pi/8) = cos(3*pi/8)
 );
 
-process(state)
+process(state, cos_values, sin_values)
 begin
     case state is
         when Calc00 | Calc10 | Calc11 | Calc12 | Calc13 =>

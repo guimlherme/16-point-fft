@@ -21,11 +21,11 @@ signal current_state: fft_state;
 
 begin
 	 
-    process(clk, reset)
+    process(clk)
     begin
-        if (reset = '0') then
-            q <= (others => (others => (others => '0')));
-        elsif rising_edge(clk) then
+        --if (reset = '0') then
+            --q <= (others => (others => (others => '0')));
+        if rising_edge(clk) then
             if (enable = '1') then
                 q <= d;
             end if;
